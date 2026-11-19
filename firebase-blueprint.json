@@ -1,0 +1,120 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "Authenticated Lumore AI user profile metadata.",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "Firebase Auth UID of the user."
+        },
+        "displayName": {
+          "type": "string",
+          "description": "Display name from Google account."
+        },
+        "email": {
+          "type": "string",
+          "description": "Gmail or Google account email address (private to owner)."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp written via FieldValue.serverTimestamp()."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp written via FieldValue.serverTimestamp()."
+        }
+      },
+      "required": ["userId", "displayName", "createdAt", "updatedAt"]
+    },
+    "ChatThread": {
+      "title": "ChatThread",
+      "description": "Saved conversation thread with Lumore AI supporting explicit bookmarking.",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "Owner Firebase Auth UID."
+        },
+        "title": {
+          "type": "string",
+          "description": "Conversation thread title (1 to 120 characters)."
+        },
+        "lastMessagePreview": {
+          "type": "string",
+          "description": "Short preview of the latest message in the thread."
+        },
+        "bookmarked": {
+          "type": "boolean",
+          "description": "Whether the user bookmarked/saved this thread."
+        },
+        "messageCount": {
+          "type": "integer",
+          "description": "Total number of messages stored in this thread."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Immutable server creation timestamp."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Server timestamp of latest activity."
+        }
+      },
+      "required": ["userId", "title", "lastMessagePreview", "bookmarked", "messageCount", "createdAt", "updatedAt"]
+    },
+    "ChatMessage": {
+      "title": "ChatMessage",
+      "description": "Individual message inside a Lumore AI chat thread.",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "Owner Firebase Auth UID."
+        },
+        "threadId": {
+          "type": "string",
+          "description": "Parent ChatThread document ID."
+        },
+        "role": {
+          "type": "string",
+          "enum": ["USER", "ASSISTANT"],
+          "description": "Message sender role."
+        },
+        "text": {
+          "type": "string",
+          "description": "Message text content."
+        },
+        "hasImage": {
+          "type": "boolean",
+          "description": "Whether the user turn included a visual attachment."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Immutable server creation timestamp."
+        }
+      },
+      "required": ["userId", "threadId", "role", "text", "hasImage", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": { "$ref": "#/entities/UserProfile" },
+      "description": "Private user profile document indexed by Firebase Auth UID."
+    },
+    "/users/{userId}/chatThreads/{threadId}": {
+      "schema": { "$ref": "#/entities/ChatThread" },
+      "description": "User's saved and bookmarked Lumore AI chat threads."
+    },
+    "/users/{userId}/chatThreads/{threadId}/messages/{messageId}": {
+      "schema": { "$ref": "#/entities/ChatMessage" },
+      "description": "Ordered messages belonging to a specific chat thread."
+    }
+  }
+}

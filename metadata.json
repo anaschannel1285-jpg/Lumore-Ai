@@ -1,0 +1,6 @@
+{
+  "name": "Lumore AI",
+  "description": "Lumore AI is a sleek AI chatbot and image generator studio powered by Gemini, featuring saved and bookmarked chat threads, multimodal vision chat, AI image creation and remixing, Google Sign-In, and adaptive light/dark themes.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

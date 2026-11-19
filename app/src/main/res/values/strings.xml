@@ -1,0 +1,66 @@
+<resources>
+    <string name="app_name">Lumore AI</string>
+
+    <!-- Navigation -->
+    <string name="nav_chat">Chat</string>
+    <string name="nav_studio">Create</string>
+    <string name="nav_saved">Saved</string>
+
+    <!-- Auth Screen -->
+    <string name="auth_headline">Chat smarter. Create visuals in seconds.</string>
+    <string name="auth_subtitle">Lumore AI combines fast streaming Gemini conversations with an AI image studio, synced securely to your Google account.</string>
+    <string name="auth_feature_ai">Streaming AI chat with photo understanding and code formatting</string>
+    <string name="auth_feature_image">Generate &amp; remix high-resolution artwork with style presets</string>
+    <string name="auth_feature_sync">Saved &amp; bookmarked chat threads in Light and Dark themes</string>
+    <string name="auth_continue_google">Continue with Google</string>
+    <string name="auth_checking_session">Checking your Google session…</string>
+
+    <!-- Chat Screen -->
+    <string name="chat_new_session">Lumore Chat</string>
+    <string name="chat_input_placeholder">Ask Lumore anything or attach an image…</string>
+    <string name="chat_send_cd">Send message</string>
+    <string name="chat_attach_cd">Attach photo</string>
+    <string name="chat_new_cd">Start new chat</string>
+    <string name="chat_bookmark_cd">Save or bookmark chat</string>
+    <string name="chat_rename_cd">Rename conversation</string>
+    <string name="chat_thinking">Lumore is thinking…</string>
+    <string name="chat_empty_title">Ask Lumore AI anything</string>
+    <string name="chat_empty_subtitle">Brainstorm ideas, write code, analyze photos, or craft vivid image prompts—every thread saves automatically.</string>
+
+    <!-- Image Studio Screen -->
+    <string name="studio_title">Image Studio</string>
+    <string name="studio_subtitle">Powered by Gemini Nano Banana 2.1</string>
+    <string name="studio_prompt_hint">Describe what you want to create or remix…</string>
+    <string name="studio_enhance_prompt">Enhance</string>
+    <string name="studio_generate">Generate Image</string>
+    <string name="studio_generating">Synthesizing artwork (30–60s)…</string>
+    <string name="studio_save_device">Save</string>
+    <string name="studio_share">Share</string>
+    <string name="studio_remix">Remix</string>
+    <string name="studio_reference_attached">Reference image attached for remixing</string>
+    <string name="studio_pick_reference">Add Reference</string>
+    <string name="studio_recent_creations">Your Studio Gallery</string>
+
+    <!-- Saved Chats Screen -->
+    <string name="saved_title">Saved Chats</string>
+    <string name="saved_search_hint">Search conversations…</string>
+    <string name="saved_filter_all">All Chats</string>
+    <string name="saved_filter_bookmarked">Bookmarked</string>
+    <string name="saved_empty_title">No saved chats yet</string>
+    <string name="saved_empty_body">Start a conversation with Lumore AI. Every thread is saved automatically and can be bookmarked for quick access.</string>
+    <string name="saved_empty_bookmarked">No bookmarked threads yet. Tap the bookmark icon in any chat to pin it here.</string>
+
+    <!-- Common & Profile -->
+    <string name="action_save">Save</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_delete">Delete</string>
+    <string name="action_retry">Retry</string>
+    <string name="profile_account_title">Google Account</string>
+    <string name="profile_theme_label">Appearance</string>
+    <string name="theme_system">System</string>
+    <string name="theme_light">Light</string>
+    <string name="theme_dark">Dark</string>
+    <string name="action_sign_out">Sign Out</string>
+    <string name="cd_toggle_theme">Toggle light or dark theme</string>
+    <string name="cd_open_profile">Open account and settings</string>
+</resources>
